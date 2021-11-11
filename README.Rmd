@@ -34,12 +34,10 @@ Start by executing 'API_...' scripts in folder '1_Historical_data_to_RDS'. This 
 
 <img src="./figures/reddit_df.jpg" align="center" width="500" />
 <br>
-<br>
 
 Proceed by adding the file 'API_to_RDS' from folder '2_Continuous_data_to_RDS' as a DAG in your docker airflow container.
 
 <img src="./figures/Airflow_Docker_Directory.jpg" align="center" width="500" />
-<br>
 <br>
 
 This procedure will regularly fetch and upload data from the same APIs as before, supplementing historical data in your PostgreSQL database with current, up-to-date, information. That is already it, you established your own datalake  which comprises of tweets, posts, queries, etc. regarding altcoins as well as their currency excange rates!
