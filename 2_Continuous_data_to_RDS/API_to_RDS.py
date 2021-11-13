@@ -158,7 +158,7 @@ def fetch_twitter_data_fct():
 # DAG
 dag = DAG(
     'reddit_to_rds',
-    schedule_interval='@daily',
+    schedule_interval='@hourly',
     start_date=datetime.now()
 )
 
