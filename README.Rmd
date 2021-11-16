@@ -39,6 +39,5 @@ Next, create a new docker image using the docker-compose.yaml and Dockerfile wit
 
 <img src="./figures/Airflow_Docker_Directory.jpg" align="center" width="500" />
 <br>
-<br>
 
 This procedure will fetch API data at a quarter-hourly rate and uploads it, supplementing historical data in your PostgreSQL Data Lake with current, up-to-date, information. That is already it, you established your own Data Lake  which comprises of tweets, posts, queries, etc. regarding altcoins as well as their currency excange rates!
