@@ -21,29 +21,27 @@ Make sure you have the following resources at your disposal.
 
 1.  PostgreSQL Database
 2.  Jupyter Notebook
-3.  [Apache/Airflow Docker
-    Container](https://hub.docker.com/r/apache/airflow)
+3.  Docker
 
 ## Usage <img src="./figures/logo_3.jpg" align="right" width="120" />
 
 Start by executing ‘API\_…’ scripts in folder
-‘1\_Historical\_data\_to\_RDS’. This will pull historical data from
-several social media APIs as well as CoinGecko’s API. Next, run the
-remaining script ‘Load\_historical\_data\_into\_datalake’. This will
-upload all data obtained into your PostgreSQL database.
+‘1\_Historical\_data\_to\_RDS’ in a Jupyter Notebook. This will pull
+historical data from Google Trend’s, Reddit’s and CoinGecko’s API and
+subsequently loads the data obtained into your PostreSQL Data Lake.
 
 <img src="./figures/reddit_df.jpg" align="center" width="500" /> <br>
-<br>
 
-Proceed by adding the file ‘API\_to\_RDS’ from folder
-‘2\_Continuous\_data\_to\_RDS’ as a DAG in your docker airflow
-container.
+Next, create a new docker image using the docker-compose.yaml and
+Dockerfile within the folder ‘2\_Continuous\_data\_to\_RDS’. Proceed by
+adding the ‘API\_to\_RDS.py’ script within the ‘DAG’ folder as a DAG in
+your Apache Airflow instance.
 
 <img src="./figures/Airflow_Docker_Directory.jpg" align="center" width="500" />
 <br> <br>
 
-This procedure will regularly fetch and upload data from the same APIs
-as before, supplementing historical data in your PostgreSQL database
-with current, up-to-date, information. That is already it, you
-established your own datalake which comprises of tweets, posts, queries,
-etc. regarding altcoins as well as their currency excange rates!
+This procedure will fetch API data at a quarter-hourly rate and uploads
+it, supplementing historical data in your PostgreSQL Data Lake with
+current, up-to-date, information. That is already it, you established
+your own Data Lake which comprises of tweets, posts, queries, etc.
+regarding altcoins as well as their currency excange rates!
